@@ -1,4 +1,6 @@
-#DESCRIPTION: CACHE LINE UTILIZATION
+# MIT License
+# Copyright (c) 2024  GayathriNarayana19
+# Permission is hereby granted to use, copy, modify, and distribute this software.
 
 import csv
 import os

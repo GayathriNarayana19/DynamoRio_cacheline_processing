@@ -1,3 +1,7 @@
+# MIT License
+# Copyright (c) 2024  GayathriNarayana19
+# Permission is hereby granted to use, copy, modify, and distribute this software.
+
 import csv
 
 CACHE_LINE_SIZE = 64
