@@ -5,7 +5,7 @@
 1. Once "python3 cache_line_usage.py" has been run, it will prompt for the "name and path for input log or txt file" you generated using dynamoRio. Pass that as input. The script continues to prompt the user for entering names for two output CSV files. Frst CSV gives a detailed first level overview of the trace and second CSV provides the used and unused % ranges for underutilized cachelines. Name as per your preferences. The script will also generate an image of cacheline distribution. 
 
 
-## Example Usage:
+### Example Usage:
 
 ```bash
 python3 cache_line_usage.py 
