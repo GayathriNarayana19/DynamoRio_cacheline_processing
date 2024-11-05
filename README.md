@@ -22,11 +22,14 @@ Processed cacheline data and written to /Users/gayyeg01/Downloads/Dynamo_output/
 2. Run the optimization_hotspots.py as follows. Pass the inputs when prompted. Provide the first level detailed output CSV file you generated from the cache_line_usage.py script as input and pass an output name for the second level csv. This second level csv basically shows the hotspots/potential cachelines to begin optimization.  
 Note: For the prompt "Enter the number of top cachelines to process (-1 for all)", enter -1 if you want to view all cachelines. Or if you want to enter top 10 or 50 hotspots/potential cachelines, enter that number instead. 
 
-Example Usage:
-
+### Example Usage:
+```bash
 python3 optimization_hotspots.py
 
 Name and path of the first level CSV file: /Users/gayyeg01/Downloads/Dynamo_output/Detailed_Trace.csv
 Provide a name to save the second level output CSV file : /Users/gayyeg01/Downloads/Dynamo_output/hotspot_second_level.csv
 Enter the number of top cachelines to process (-1 for all): -1
+```
+```bash
 Processing complete. Sorted cacheline data written to /Users/gayyeg01/Downloads/Dynamo_output/hotspot_second_level.csv
+```
