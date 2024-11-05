@@ -42,7 +42,6 @@ def get_percentage_range(percentage):
 def process_cacheline_data(input_csv, output_csv, show_graph=False):
     cacheline_data = {}
     percentage_ranges = {}
-
     with open(input_csv, 'r') as infile:
         reader = csv.reader(infile)
         header = next(reader)  #Skipping the header
@@ -86,7 +85,7 @@ def process_cacheline_data(input_csv, output_csv, show_graph=False):
                     range_key
                 ])
 
-    print(f"Processed cacheline data and written to {output_csv} and image is saved as cacheline_distribution.png")
+    print(f"Processed cacheline data and written to {output_csv} and image is saved to {image_name}")
 
     #Unused percentage range graph
     if show_graph:
@@ -104,7 +103,7 @@ def process_cacheline_data(input_csv, output_csv, show_graph=False):
         plt.grid(True, axis='y', linestyle='--', alpha=0.7)  #light grid
         plt.ylim(0, max(values) + 1)  
         plt.tight_layout()
-        plt.savefig('cacheline_distribution.png')
+        plt.savefig(image_name)
         #plt.show()
 
 #Gets the cache line number based on an input memory addr
@@ -259,6 +258,16 @@ input_file = input("Name and path to the input log / txt file: ")
 output_file = input("Provide a Path/name to save the first level detailed output CSV file: ")
 output_csv = input("Provide a Path/name to save the unused cacheline percentage CSV file: ")
 
+def create_dir_if_not_present(file_path):
+    directory = os.path.dirname(file_path)
+    if directory:  
+        os.makedirs(directory, exist_ok=True)
+
+create_dir_if_not_present(input_file)
+create_dir_if_not_present(output_file)
+create_dir_if_not_present(output_csv)
+base_name = os.path.splitext(output_csv)[0]  
+image_name = f"{base_name}_cacheline_distribution.png"
 # cache line usage fn call
 cache_line_util(input_file, output_file)
 
